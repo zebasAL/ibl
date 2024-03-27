@@ -1,0 +1,33 @@
+.header {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 5rem;
+  @include media('max', 600px) {
+    font-size: 2rem;
+  }
+}
+
+.helper-text {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  @include helper-text-styles(default);
+  
+  &.info {
+    @include helper-text-styles(info);
+  }
+
+  &.danger {
+    @include helper-text-styles(danger);
+  }
+
+  &.success {
+    @include helper-text-styles(success);
+  }
+
+  &.warning {
+    @include helper-text-styles(warning);
+  }
+}

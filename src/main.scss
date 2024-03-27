@@ -1,0 +1,28 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import "./styles/abstracts/functions";
+@import "./styles/abstracts/mixins";
+@import "./styles/abstracts/placeholders";
+@import "./styles/abstracts/variables";
+
+@import "./styles/base/animations";
+@import "./styles/base/reset";
+@import "./styles/base/typography";
+
+@import "./styles/components/text";
+@import "./styles/components/waves";
+
+@import "./styles/layout/grid";
+
+@import "./styles/pages/dashboard";
+@import "./styles/pages/users";
+
+// @import './themes/';
+
+@import "./styles/utils/utilities";
+
+// @import 'vendors/';

@@ -1,0 +1,45 @@
+@keyframes landing-background {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes landing-button {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 5rem;
+  }
+}
+
+@keyframes bouncing-button {
+  0% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: -0.5rem;
+  }
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes waveMove-1 {
+  0% {
+    background-position-x: 0;
+  } 100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes waveMove-2 {
+  0% {
+    background-position-x: 0;
+  } 100% {
+    background-position-x: -1000px;
+  }
+}

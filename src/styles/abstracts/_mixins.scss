@@ -1,0 +1,27 @@
+@mixin helper-text-styles($type) {
+  @if $type == 'info' {
+    color: #1a73e8;
+  } @else if $type == 'danger' {
+    color: #d93025;
+  } @else if $type == 'success' {
+    color: #008000;
+  } @else if $type == 'warning' {
+    color: #ffa200;
+  } @else {
+    color: $default-text-color;
+  }
+}
+
+@mixin media($type, $size) {
+  @if $type == 'min' {
+    @media screen and (min-width: #{$size}) {
+      @content;
+    }
+  } @else if $type == 'max' {
+    @media screen and (max-width: #{$size}) {
+      @content;
+    }
+  } @else {
+    @error "Tipo de consulta de medios no válido. Usa 'min' o 'max'.";
+  }
+}

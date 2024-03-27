@@ -1,0 +1,26 @@
+.page.h-full {
+  display: grid;
+  grid-template-rows: min-content auto;
+  overflow: hidden;
+  transition: all 0.5s;
+  width: 100%;
+  &.showing-sidebar {
+    margin-left: -100%;
+  }
+  &.sidebar {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    background-color: $color-white;
+    background-image: url(/images/mask.svg);
+    background-color: $color-black;
+    color: $color-white;
+    background-size: 120%;
+    background-position: 50% 150%;
+    background-repeat: no-repeat;
+    &.showing-sidebar {
+      right: 0;
+    }
+  }
+}
