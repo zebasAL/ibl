@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router';
-import { AuthGuard, DashboardLayout } from '../layouts';
+import { AuthGuard, MainLayout } from '../layouts';
 import LoadingScreen from '../components/LoadingScreen';
 
 // ----------------------------------------------------------------------
@@ -16,11 +16,11 @@ export const dashboardRoutes = [
     path: 'dashboard',
     element: (
       <AuthGuard>
-        <DashboardLayout>
+        <MainLayout>
           <Suspense fallback={<LoadingScreen />}>
             <Outlet />
           </Suspense>
-        </DashboardLayout>
+        </MainLayout>
       </AuthGuard>
     ),
     children: [

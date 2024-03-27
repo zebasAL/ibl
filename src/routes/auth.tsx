@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Outlet } from 'react-router';
 import { GuestGuard, AuthLayout } from '../layouts';
-import Loader from '../components/Loader';
+import LoadingScreen from '../components/LoadingScreen';
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ export const authRoutes = [
     path: 'auth',
     element: (
       <GuestGuard>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<LoadingScreen />}>
           <Outlet />
         </Suspense>
       </GuestGuard>
