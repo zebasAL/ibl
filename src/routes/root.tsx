@@ -1,12 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { GuestGuard, MainLayout } from '../layouts';
-import Loader from '../components/Loader';
+import LoadingScreen from '../components/LoadingScreen';
 
 // ----------------------------------------------------------------------
 
 const Page404 = lazy(() => import('@/pages/404'));
-MainLayout
 const RootPage = lazy(() => import('@/pages/index'));
 
 // ----------------------------------------------------------------------
@@ -16,7 +15,7 @@ export const rootRoutes = [
     path: '',
     element: (
       <GuestGuard>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<LoadingScreen />}>
           <Outlet />
         </Suspense>
       </GuestGuard>
