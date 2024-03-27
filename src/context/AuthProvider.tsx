@@ -111,7 +111,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
   }, [initialize]);
 
   const login = useCallback(async (email: string, password: string) => {
-    const data = { email };
+    const data = { email, password };
     const token = await createToken(data)
     setSession(token);
 
@@ -129,6 +129,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
       email,
       firstName,
       lastName,
+      password,
     };
     const token = await createToken(data)
     setSession(token)
