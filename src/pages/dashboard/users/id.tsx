@@ -1,9 +1,5 @@
-import locationSVG from "/assets/location.svg"
-import cellSVG from "/assets/cell.svg"
-import birthdateSVG from "/assets/birthdate.svg"
 import Loader from "@/components/Loader"
 import Error from "@/pages/Error"
-import { fDate } from "@/utils/formatTime"
 import { useGetUser } from '@/hooks/useUsers';
 import Wave from '@/components/WaveBackground';
 import UserCard from "@/components/UserCard"
