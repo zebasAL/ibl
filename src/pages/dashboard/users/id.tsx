@@ -6,6 +6,7 @@ import Error from "@/pages/Error"
 import { fDate } from "@/utils/formatTime"
 import { useGetUser } from '@/hooks/useUsers';
 import Wave from '@/components/WaveBackground';
+import UserCard from "@/components/UserCard"
 
 
 export default function UsersIndex() {
@@ -26,41 +27,7 @@ export default function UsersIndex() {
         <img className="main-image hidden md:block w-[50%] max-h-[200px] object-contain border-r-8" alt={user.name.first} src={user.picture.large} />
 
         <div className="w-full md:w-[50%]">
-          <div className="card m-auto">
-            <div className="header">
-              <img alt={user.name.first} src={user.picture?.thumbnail} className="block md:hidden" />
-              <div className="w-full">
-                <p>{`${user.name.title} ${user.name.first} ${user.name.last}`}</p>
-                <p>{`${user.nat} | ${user.cell}`}</p>
-              </div>
-            </div>
-            <div className="content">
-              <div className="mb-8">
-                <img src={locationSVG} alt="location_logo" />
-                {`${user.location.street.name} ${user.location.street.number} | ${user.location.city} ${user.location.state}`}
-              </div>
-
-              <div>
-                <p className="p1">
-                  Phone:
-                </p>
-                <p className="p2">
-                  <img src={cellSVG} alt="cell_logo" />
-                  {user.cell}
-                </p>
-              </div>
-
-              <div>
-                <p className="p1">
-                  Birthdate:
-                </p>
-                <p className="p2">
-                  <img src={birthdateSVG} alt="birthdate_logo" />
-                  {`${fDate(user.dob.date)} (Age: ${user.dob.age})`}
-                </p>
-              </div>
-            </div>
-          </div>
+          <UserCard user={user} disabled />
         </div>
       </div>
     )
