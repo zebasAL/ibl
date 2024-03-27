@@ -30,7 +30,7 @@ export const useListUsers = () => {
   }
 }
 
-export const useGetUser = (id: string) => {
+export const useGetUser = () => {
   const [res] = useAxios<UsersResponse>("https://randomuser.me/api");
 
   return {

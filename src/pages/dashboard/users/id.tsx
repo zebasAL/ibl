@@ -1,6 +1,4 @@
-import { useParams } from 'react-router';
 import locationSVG from "/assets/location.svg"
-import ageSVG from "/assets/age.svg"
 import cellSVG from "/assets/cell.svg"
 import birthdateSVG from "/assets/birthdate.svg"
 import Loader from "@/components/Loader"
@@ -11,8 +9,7 @@ import Wave from '@/components/WaveBackground';
 
 
 export default function UsersIndex() {
-  const { id } = useParams()
-  const { user, loading, error } = useGetUser(id ?? "")
+  const { user, loading, error } = useGetUser()
 
   const content = (() => {
     if (loading) return (
