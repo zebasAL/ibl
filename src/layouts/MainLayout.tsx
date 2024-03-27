@@ -1,13 +1,20 @@
+import { useNavigate } from 'react-router';
 import Loader from '@/components/Loader';
 import { useAuthContext } from '@/context/auth-context';
 import { paths } from "@/routes/paths"
 
-type DashboardLayout = {
+type MainLayout = {
   children: JSX.Element,
 }
 
-export default function DashboardLayout({ children }: DashboardLayout) {
+export default function MainLayout({ children }: MainLayout) {
   const { authenticated, loading, logout } = useAuthContext();
+
+  const navigate = useNavigate()
+
+  const handleRedirectToLogin = () => {
+    navigate("auth/login")
+  }
 
   return (
     <>
@@ -22,7 +29,7 @@ export default function DashboardLayout({ children }: DashboardLayout) {
              ? (
               <Loader />
              ) : (
-              <button onClick={logout} className="text-blue-600 dark:text-blue-500 hover:underline">{authenticated ? "Logout" : "Login"}</button>
+              <button onClick={authenticated ? logout : handleRedirectToLogin} className="text-blue-600 dark:text-blue-500 hover:underline">{authenticated ? "Logout" : "Login"}</button>
              )}
           </div>
         </div>

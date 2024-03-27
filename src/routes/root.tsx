@@ -1,12 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router';
-import { GuestGuard } from '../layouts';
+import { GuestGuard, MainLayout } from '../layouts';
 import Loader from '../components/Loader';
 
 // ----------------------------------------------------------------------
 
-const IndexPage = lazy(() => import('@/pages/index'));
 const Page404 = lazy(() => import('@/pages/404'));
+MainLayout
+const RootPage = lazy(() => import('@/pages/index'));
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +24,7 @@ export const rootRoutes = [
     children: [
       {
         path: "/",
-        element: <IndexPage />
+        element: <MainLayout><RootPage /></MainLayout>
       },
       {
         path: "404",

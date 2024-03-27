@@ -1,43 +1,11 @@
 section.home {
-  background-color: $color-black;
-  overflow: auto;
-  .location-container {
-    padding-top: 8rem;
-    padding-bottom: 3rem;
-    img {
-      width: 8rem;
-    }
+  margin: auto;
+
+  a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
-  .section-container {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
-    .input-container {
-      border-radius: 2rem;
-      overflow: hidden;
-      position: relative;
-      .btn {
-        position: absolute;
-        top: 0;
-        right: -50%;
-        transition: all 0.5s;
-      }
-      &.valid {
-        .btn {
-          right: 0;
-        }
-      }
-    }
-    h2 {
-      text-transform: uppercase;
-      color: $color-white;
-      font-size: 3.2rem;
-    }
-  }
-  .image-container {
-    padding-top: 8rem;
-    padding-bottom: 5rem;
-    .mask-container {
-      @include mask($color-black);
-    }
-  }
+
 }
